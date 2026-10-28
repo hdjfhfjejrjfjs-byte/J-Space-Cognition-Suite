@@ -23,8 +23,10 @@ J-Space 是面向复杂推理、大型仓库工程、子代理协作与授权安
 
 ```bash
 claude plugin marketplace add hdjfhfjejrjfjs-byte/J-Space-Cognition-Suite
-claude plugin install j-space@j-space
+claude plugin install j-space@j-space --yes
 ```
+
+`--yes` 用于在非交互终端确认第三方来源；省略则自行阅读并确认来源后再安装。
 
 本地检出可先用 `/plugin marketplace add ./` 注册当前目录，再执行同一安装命令。用
 `claude plugin validate .` 校验清单，用 `/plugin marketplace update j-space` 拉取后续更新。

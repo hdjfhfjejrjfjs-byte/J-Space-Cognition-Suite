@@ -28,8 +28,11 @@ skill is namespaced as `/j-space:j-space`; once the plugin is enabled, plain pro
 
 ```bash
 claude plugin marketplace add hdjfhfjejrjfjs-byte/J-Space-Cognition-Suite
-claude plugin install j-space@j-space
+claude plugin install j-space@j-space --yes
 ```
+
+`--yes` answers the untrusted-source confirmation for a non-interactive shell; omit it to
+review and confirm the source yourself.
 
 For a local checkout, register the repository directory with `/plugin marketplace add ./`
 and run the same install command. Validate the manifests with `claude plugin validate .`,
