@@ -12,6 +12,30 @@ Its thirteen modules share one premise and one routing entry. Standard-library P
 scripts persist state, reread actual source text, detect stale maps and evidence, and return
 blocking results when a required condition is missing. The host supplies tools and agents.
 
+## Install as a Claude Code plugin
+
+This repository is also its own plugin marketplace, so Claude Code can install J-Space
+without copying files by hand:
+
+```text
+/plugin marketplace add hdjfhfjejrjfjs-byte/J-Space-Cognition-Suite
+/plugin install j-space@j-space
+```
+
+Confirm the enable prompt, then start a new session or run `/reload-plugins`. The bundled
+skill is namespaced as `/j-space:j-space`; once the plugin is enabled, plain prose such as
+“use j-space” also reaches it. The same steps from a shell:
+
+```bash
+claude plugin marketplace add hdjfhfjejrjfjs-byte/J-Space-Cognition-Suite
+claude plugin install j-space@j-space
+```
+
+For a local checkout, register the repository directory with `/plugin marketplace add ./`
+and run the same install command. Validate the manifests with `claude plugin validate .`,
+and pick up a later release with `/plugin marketplace update j-space`. The manual copy in
+the next section remains the route for hosts without plugin support.
+
 ## Quick start
 
 You need a host that can load a local `SKILL.md` and retrieve its supporting files.
@@ -291,6 +315,9 @@ commit and environment you plan to use.
 
 ```text
 J-Space Cognition Suite SV1/
+├── .claude-plugin/
+│   ├── marketplace.json          # Marketplace entry for /plugin marketplace add
+│   └── plugin.json               # Plugin manifest; exposes j-space/ as the skill
 ├── .github/workflows/verify.yml
 ├── .gitignore
 ├── CITATION.cff

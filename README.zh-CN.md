@@ -9,6 +9,27 @@ J-Space 是面向复杂推理、大型仓库工程、子代理协作与授权安
 
 十三个模块共享一个核心前提和一个路由入口。Python 标准库脚本负责保存状态、实际重读原文、检测过期地图与证据，并在必要条件不满足时返回阻断结果。宿主提供工具与代理运行能力。
 
+## 作为 Claude Code 插件安装
+
+本仓库同时充当插件市场，Claude Code 可直接从 GitHub 安装，无需手工复制文件：
+
+```text
+/plugin marketplace add hdjfhfjejrjfjs-byte/J-Space-Cognition-Suite
+/plugin install j-space@j-space
+```
+
+确认启用提示后重启会话或执行 `/reload-plugins`；技能以 `/j-space:j-space` 暴露，启用后
+直接用自然语言说“使用 j-space”也可以。命令行等价写法：
+
+```bash
+claude plugin marketplace add hdjfhfjejrjfjs-byte/J-Space-Cognition-Suite
+claude plugin install j-space@j-space
+```
+
+本地检出可先用 `/plugin marketplace add ./` 注册当前目录，再执行同一安装命令。用
+`claude plugin validate .` 校验清单，用 `/plugin marketplace update j-space` 拉取后续更新。
+不支持插件的主机继续使用下文的复制安装方式。
+
 ## 快速开始
 
 需要能加载本地 `SKILL.md` 并读取配套文件的宿主。执行控制器和安装校验需要 Python 3.10+；
@@ -242,6 +263,9 @@ CI 配置 Windows、Linux、macOS。完整性检查覆盖入口、共同前提�
 
 ```text
 J-Space Cognition Suite SV1/
+├── .claude-plugin/
+│   ├── marketplace.json          # 供 /plugin marketplace add 使用的市场清单
+│   └── plugin.json               # 插件清单；将 j-space/ 暴露为技能
 ├── .github/workflows/verify.yml
 ├── .gitignore
 ├── CITATION.cff

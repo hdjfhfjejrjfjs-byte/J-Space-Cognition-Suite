@@ -1,0 +1,22 @@
+{
+  "name": "j-space",
+  "owner": {
+    "name": "hdjfhfjejrjfjs-byte",
+    "url": "https://github.com/hdjfhfjejrjfjs-byte"
+  },
+  "metadata": {
+    "description": "J-Space Cognition Suite: an inference-time workspace and control suite for complex reasoning, repository engineering, coordinated agents, and authorized security analysis."
+  },
+  "plugins": [
+    {
+      "name": "j-space",
+      "source": "./",
+      "description": "Inference-time workspace and control suite for complex reasoning, repository engineering, coordinated agents, and authorized security analysis.",
+      "version": "SV1",
+      "author": {
+        "name": "Tiger3807861189",
+        "url": "https://github.com/Tiger3807861189"
+      }
+    }
+  ]
+}
